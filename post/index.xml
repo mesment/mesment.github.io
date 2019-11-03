@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Strata</title>
+    <link>https://mesment.github.io/post/</link>
+    <description>Recent content in Posts on Strata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Nov 2019 00:22:22 +0800</lastBuildDate>
+    
+	<atom:link href="https://mesment.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://mesment.github.io/post/second/</link>
+      <pubDate>Sun, 03 Nov 2019 00:22:22 +0800</pubDate>
+      
+      <guid>https://mesment.github.io/post/second/</guid>
+      <description>This is my example blog post Hi How are you!</description>
+    </item>
+    
+    <item>
+      <title>使用hugo和github搭建博客</title>
+      <link>https://mesment.github.io/post/first/</link>
+      <pubDate>Sat, 02 Nov 2019 19:41:09 +0800</pubDate>
+      
+      <guid>https://mesment.github.io/post/first/</guid>
+      <description>安装Hugo 下载hugo 二进制文件
+wget https://github.com/gohugoio/hugo/releases/download/v0.58.2/hugo_0.58.2_Linux-64bit.deb  下载完成后执行以下命令:
+dpkg -i hugo_0.58.2_Linux-64bit.deb  检查安装的hugo版本
+hugo version  返回的输出为：
+Hugo Static Site Generator v0.58.2-253E5FDC linux/amd64 BuildDate: 2019-09-13T08:05:59Z  可以使用hugo &amp;ndash;help 命令来查看hugo的帮助手册
+hugo --help  返回帮助信息
+hugo is the main command, used to build your Hugo site. Hugo is a Fast and Flexible Static Site Generator built with love by spf13 and friends in Go. Complete documentation is available at http://gohugo.io/. Usage: hugo [flags] hugo [command] Available Commands: config Print the site configuration convert Convert your content to different formats deploy Deploy your site to a Cloud provider.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>使用hugo和github搭建博客 &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Your name">
+		<meta name="description" content="Describe your website">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="使用hugo和github搭建博客">
+		<meta name="og:url" content="https://mesment.github.io/post/first/">
+		
+		<meta name="og:image" content="https://mesment.github.io/images/me.jpg">
+		
+		
+
+		<meta name="generator" content="Hugo 0.58.2" />
+
+		<!--[if lte IE 8]><script src='https://mesment.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://mesment.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://mesment.github.io//css/ie8.css"><![endif]-->
+
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://mesment.github.io/" class="image avatar"><img src="https://mesment.github.io/images/me.jpg" alt="" /></a>
+	
+	
+		<h1><strong>Welcome</strong></h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://mesment.github.io/about">About</a></li>
+			
+				<li><a href="https://mesment.github.io/">Home</a></li>
+			
+				<li><a href="https://mesment.github.io/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>使用hugo和github搭建博客</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2019-11-02 19:41:09 &#43;0800 CST">2019-11-02</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+	</span>
+
+	<p>
+	    
+
+<h2 id="安装hugo">安装Hugo</h2>
+
+<p>下载hugo 二进制文件</p>
+
+<pre><code>wget https://github.com/gohugoio/hugo/releases/download/v0.58.2/hugo_0.58.2_Linux-64bit.deb
+</code></pre>
+
+<p>下载完成后执行以下命令:</p>
+
+<pre><code>dpkg -i hugo_0.58.2_Linux-64bit.deb
+</code></pre>
+
+<p>检查安装的hugo版本</p>
+
+<pre><code>hugo version
+</code></pre>
+
+<p>返回的输出为：</p>
+
+<pre><code>Hugo Static Site Generator v0.58.2-253E5FDC linux/amd64 BuildDate: 2019-09-13T08:05:59Z
+</code></pre>
+
+<p>可以使用hugo &ndash;help 命令来查看hugo的帮助手册</p>
+
+<pre><code>hugo --help
+</code></pre>
+
+<p>返回帮助信息</p>
+
+<pre><code>hugo is the main command, used to build your Hugo site.
+
+Hugo is a Fast and Flexible Static Site Generator
+built with love by spf13 and friends in Go.
+
+Complete documentation is available at http://gohugo.io/.
+
+Usage:
+  hugo [flags]
+  hugo [command]
+
+Available Commands:
+  config      Print the site configuration
+  convert     Convert your content to different formats
+  deploy      Deploy your site to a Cloud provider.
+  env         Print Hugo version and environment info
+  gen         A collection of several useful generators.
+  help        Help about any command
+  import      Import your site from others.
+  list        Listing out various types of content
+  mod         Various Hugo Modules helpers.
+  new         Create new content for your site
+  server      A high performance webserver
+  version     Print the version number of Hugo
+
+Flags:
+  -b, --baseURL string         hostname (and path) to the root, e.g. http://spf13.com/
+  -D, --buildDrafts            include content marked as draft
+  -E, --buildExpired           include expired content
+  -F, --buildFuture            include content with publishdate in the future
+      --cacheDir string        filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --cleanDestinationDir    remove files from destination not found in static directories
+      --config string          config file (default is path/config.yaml|json|toml)
+      --configDir string       config dir (default &quot;config&quot;)
+  -c, --contentDir string      filesystem path to content directory
+      --debug                  debug output
+  -d, --destination string     filesystem path to write files to
+      --disableKinds strings   disable different kind of pages (home, RSS etc.)
+      --enableGitInfo          add Git revision, date and author info to the pages
+  -e, --environment string     build environment
+      --forceSyncStatic        copy all files when static is changed.
+      --gc                     enable to run some cleanup tasks (remove unused cache files) after the build
+  -h, --help                   help for hugo
+      --i18n-warnings          print missing translations
+      --ignoreCache            ignores the cache directory
+      --ignoreVendor           ignores any _vendor directory
+  -l, --layoutDir string       filesystem path to layout directory
+      --log                    enable Logging
+      --logFile string         log File path (if set, logging enabled automatically)
+      --minify                 minify any supported output format (HTML, XML etc.)
+      --noChmod                don't sync permission mode of files
+      --noTimes                don't sync modification time of files
+      --path-warnings          print warnings on duplicate target paths etc.
+      --quiet                  build in quiet mode
+      --renderToMemory         render to memory (only useful for benchmark testing)
+  -s, --source string          filesystem path to read files relative from
+      --templateMetrics        display metrics about template executions
+      --templateMetricsHints   calculate some improvement hints when combined with --templateMetrics
+  -t, --theme strings          themes to use (located in /themes/THEMENAME/)
+      --themesDir string       filesystem path to themes directory
+      --trace file             write trace to file (not useful in general)
+  -v, --verbose                verbose output
+      --verboseLog             verbose logging
+  -w, --watch                  watch filesystem for changes and recreate as needed
+
+Additional help topics:
+  hugo check   Contains some verification checks
+
+Use &quot;hugo [command] --help&quot; for more information about a command.
+</code></pre>
+
+<h2 id="使用hugo创建网站">使用hugo创建网站</h2>
+
+<p>可以使用命令hugo new site  sitename(www.mesment.com) 来创建一个名叫sitename 的网站</p>
+
+<pre><code>创建网站文件存放目录 这里使用/mnt/hugo
+mkdir -p /mnt/hugo
+cd /mnt/hugo/
+hugo new site blog
+</code></pre>
+
+<p>执行结果:</p>
+
+<pre><code>root@instance-507hhowz:/mnt/hugo# hugo new site blog
+Congratulations! Your new Hugo site is created in /mnt/hugo/blog.
+
+Just a few more steps and you're ready to go:
+
+1. Download a theme into the same-named folder.
+   Choose a theme from https://themes.gohugo.io/ or
+   create your own with the &quot;hugo new theme &lt;THEMENAME&gt;&quot; command.
+2. Perhaps you want to add some content. You can add single files
+   with &quot;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&quot;.
+3. Start the built-in live server via &quot;hugo server&quot;.
+
+Visit https://gohugo.io/ for quickstart guide and full documentation.
+
+</code></pre>
+
+<p>此时在/mnt/data/blog 目录下会多出以下文件和目录</p>
+
+<pre><code>archetypes  config.toml  content  data  layouts  static  themes
+</code></pre>
+
+<p>在网站目录blog下新建关于页面 about.md</p>
+
+<pre><code>cd /mnt/data/blog
+hugo new about.md
+</code></pre>
+
+<p>返回信息:</p>
+
+<pre><code>root@instance-507hhowz:/mnt/hugo/blog# hugo new about.md
+/mnt/hugo/blog/content/about.md created
+</code></pre>
+
+<p>查看默认生成关于页面信息的内容</p>
+
+<pre><code>root@instance-507hhowz:/mnt/hugo/blog/content# cat about.md 
+---
+title: &quot;About&quot;
+date: 2019-11-02T19:23:49+08:00
+draft: true
+---
+
+</code></pre>
+
+<p>编辑about文件，将内容替换为以下内容:</p>
+
+<pre><code>---
+title: &quot;About&quot;
+date: 2019-11-02T19:23:49+08:00
+draft: false
+---
+我是mesment,目前从事golang软件开发工作。喜欢陶笛、爬山、健身。
+</code></pre>
+
+<p>开始准备发布第一篇博客</p>
+
+<pre><code>hugo new post/first.md
+</code></pre>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "spf13" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<li><a href="https://mesment.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://mesment.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; John Doe</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://mesment.github.io/js/jquery.min.js"></script>
+<script src="https://mesment.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://mesment.github.io/js/skel.min.js"></script>
+<script src="https://mesment.github.io/js/util.js"></script>
+
+<script src="https://mesment.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>
